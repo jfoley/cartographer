@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "647302D91C51BC20007F7F1F"
+               BuildableName = "Specs.xctest"
+               BlueprintName = "Specs"
+               ReferencedContainer = "container:Cartographer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "647302961C51BBB0007F7F1F"
+            BuildableName = "Cartographer.framework"
+            BlueprintName = "Cartographer"
+            ReferencedContainer = "container:Cartographer.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
