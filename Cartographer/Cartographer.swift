@@ -17,6 +17,12 @@ public class Cartographer {
         return cast(value)
     }
     
+    public func fetch<T>(key: String, transform: (T) -> (T)) throws -> T {
+        let value = json[key]!
+        
+        return transform(cast(value))
+    }
+    
     func cast<T: Mappable>(value: AnyObject) throws -> T {
         return try T(mapper: Cartographer(json: value as! [String: AnyObject]))
     }
