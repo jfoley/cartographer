@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		645FD6481C53E31200358F6D /* nested.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645FD6471C53E31200358F6D /* nested.swift */; };
 		6473029B1C51BBB0007F7F1F /* Cartographer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6473029A1C51BBB0007F7F1F /* Cartographer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		647302DD1C51BC20007F7F1F /* Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647302DC1C51BC20007F7F1F /* Specs.swift */; };
+		647302DD1C51BC20007F7F1F /* simple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647302DC1C51BC20007F7F1F /* simple.swift */; };
 		647302DF1C51BC20007F7F1F /* Cartographer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647302971C51BBB0007F7F1F /* Cartographer.framework */; };
 		647302E51C51BDC3007F7F1F /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647302AD1C51BC07007F7F1F /* Nimble.framework */; };
 		647302E61C51BDC3007F7F1F /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647302CB1C51BC10007F7F1F /* Quick.framework */; };
@@ -131,13 +132,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		645FD6471C53E31200358F6D /* nested.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nested.swift; sourceTree = "<group>"; };
 		647302971C51BBB0007F7F1F /* Cartographer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartographer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6473029A1C51BBB0007F7F1F /* Cartographer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cartographer.h; sourceTree = "<group>"; };
 		6473029C1C51BBB0007F7F1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		647302A31C51BC07007F7F1F /* Nimble.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Nimble.xcodeproj; path = Nimble/Nimble.xcodeproj; sourceTree = "<group>"; };
 		647302B81C51BC10007F7F1F /* Quick.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Quick.xcodeproj; path = Quick/Quick.xcodeproj; sourceTree = "<group>"; };
 		647302DA1C51BC20007F7F1F /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		647302DC1C51BC20007F7F1F /* Specs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specs.swift; sourceTree = "<group>"; };
+		647302DC1C51BC20007F7F1F /* simple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simple.swift; sourceTree = "<group>"; };
 		647302DE1C51BC20007F7F1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		647302E71C51C063007F7F1F /* Cartographer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cartographer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -233,8 +235,9 @@
 		647302DB1C51BC20007F7F1F /* Specs */ = {
 			isa = PBXGroup;
 			children = (
-				647302DC1C51BC20007F7F1F /* Specs.swift */,
+				647302DC1C51BC20007F7F1F /* simple.swift */,
 				647302DE1C51BC20007F7F1F /* Info.plist */,
+				645FD6471C53E31200358F6D /* nested.swift */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -475,7 +478,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				647302DD1C51BC20007F7F1F /* Specs.swift in Sources */,
+				645FD6481C53E31200358F6D /* nested.swift in Sources */,
+				647302DD1C51BC20007F7F1F /* simple.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +657,7 @@
 				647302A11C51BBB0007F7F1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		647302E21C51BC20007F7F1F /* Build configuration list for PBXNativeTarget "Specs" */ = {
 			isa = XCConfigurationList;
@@ -661,6 +666,7 @@
 				647302E41C51BC20007F7F1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -2,13 +2,13 @@ import Quick
 import Nimble
 import Cartographer
 
-struct Person {
+private struct Person {
     let id: Int
     let name: String
     let kitty: Kitty
 }
 
-struct Kitty {
+private struct Kitty {
     let name: String
 }
 
@@ -30,28 +30,28 @@ extension Kitty: Mappable {
     }
 }
 
-class CartographerSpec: QuickSpec {
+class NestedCartographerSpec: QuickSpec {
     override func spec() {
-        describe("cartographer") {
-            it("maps an object") {
+        describe("mapping a nested object") {
+            it("maps") {
                 let json = [
                     "id": 1,
                     "name": "person-name",
                     "kitty": [
-                        "name": "kitty-face"
+                        "name": "kitty-name"
                     ]
                 ]
-
+                
                 let cartographer = Cartographer(json: json)
-
+                
                 do {
                     let person = try Person(mapper: cartographer)
-
+                    
                     expect(person.name).to(equal("person-name"))
                     expect(person.id).to(equal(1))
-                    expect(person.kitty.name).to(equal("kitty-face"))
+                    expect(person.kitty.name).to(equal("kitty-name"))
                 } catch {
-                    
+                    fail("there was an error in mapping")
                 }
             }
         }
