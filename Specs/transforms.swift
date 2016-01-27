@@ -24,12 +24,12 @@ class TransformsSpec: QuickSpec {
                     "id": 1,
                     "name": "person-name",
                 ]
-                
+
                 let cartographer = Cartographer(json: json)
-                
+
                 do {
                     let person = try Person(mapper: cartographer)
-                    
+
                     expect(person.name).to(equal("person-name"))
                     expect(person.id).to(equal(6))
                 } catch {
