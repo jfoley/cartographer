@@ -1,4 +1,9 @@
 public class Cartographer {
+    public enum Error: ErrorType {
+        case MissingKey(String)
+        case CannotCast(String, Any)
+    }
+
     private let json: [String: AnyObject]
     
     public init(json: [String: AnyObject]) {
@@ -6,15 +11,19 @@ public class Cartographer {
     }
     
     public func fetch<T: Mappable>(key: String) throws -> T {
-        let value = json[key]!
+        guard let value = json[key] else {
+            throw Error.MissingKey(key)
+        }
     
-        return try! cast(value)
+        return try! cast(value, key: key)
     }
     
     public func fetch<T>(key: String) throws -> T {
-        let value = json[key]!
+        guard let value = json[key] else {
+            throw Error.MissingKey(key)
+        }
         
-        return cast(value)
+        return try cast(value, key: key)
     }
 
     public func fetchMany<T: Mappable>(key: String) throws -> [T] {
@@ -28,15 +37,19 @@ public class Cartographer {
     public func fetch<T>(key: String, transform: (T) -> (T)) throws -> T {
         let value = json[key]!
         
-        return transform(cast(value))
+        return transform(try cast(value, key: key))
     }
     
-    func cast<T: Mappable>(value: AnyObject) throws -> T {
+    func cast<T: Mappable>(value: AnyObject, key: String) throws -> T {
         return try T(mapper: Cartographer(json: value as! [String: AnyObject]))
     }
     
-    func cast<T>(value: AnyObject) -> T {
-        return value as! T
+    func cast<T>(value: AnyObject, key: String) throws -> T {
+        guard let casted: T = value as? T else {
+            throw Error.CannotCast(key, T.self)
+        }
+
+        return casted
     }
 }
 
